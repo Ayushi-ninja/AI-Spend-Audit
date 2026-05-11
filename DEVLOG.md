@@ -118,3 +118,35 @@ Also need to figure out how to handle the RLS configuration properly.
 **Plan for tomorrow:**
 Implement the Supabase insert logic for saving audit results.
 Figure out how to handle the RLS configuration properly.
+
+## Day 5 — 2026-05-11
+
+**Hours worked:** 6
+
+**What I did:**
+Built the Resend email integration with a full HTML email template that
+includes the savings hero, share URL, and conditional Credex CTA for
+high-savings cases. Added IP-based rate limiting (5 requests/hour) and
+honeypot spam protection to the lead capture route. Wrote all five
+entrepreneurial markdown files: GTM.md with specific channels and
+first-100-users plan, ECONOMICS.md with full conversion funnel math,
+LANDING_COPY.md with headline and FAQ, METRICS.md with North Star
+and input metrics, and USER_INTERVIEWS.md with notes from three real
+conversations conducted this week.
+
+**What I learned:**
+The user interviews surfaced two things I hadn't anticipated: engineering
+managers want a PDF they can send to their CFO, and indie founders
+are suspicious of tool comparison sites because of affiliate bias. Both
+changed the design — longer reason strings and a more prominent
+already-optimal state.
+
+**Blockers / what I'm stuck on:**
+Resend free tier only allows sending to verified email addresses during
+development. Using onboarding@resend.dev as sender for now. Need to
+verify a domain before launch to send from a branded address.
+
+**Plan for tomorrow:**
+Polish the UI for mobile and Lighthouse scores. Write ARCHITECTURE.md
+with Mermaid diagram. Write REFLECTION.md. Run Lighthouse on deployed
+URL and fix any scores below threshold. Begin TESTS.md.
