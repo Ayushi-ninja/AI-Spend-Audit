@@ -81,11 +81,11 @@ export default async function PublicAuditPage({ params }: { params: { id: string
 
       <div className="text-center">
         
-          href={process.env.NEXT_PUBLIC_APP_URL}
+          <a href={process.env.NEXT_PUBLIC_APP_URL}
           className="inline-block bg-black text-white px-6 py-3 rounded-lg 
                      font-medium hover:bg-gray-800 transition"
         >
-          Audit your own AI spend →
+          Audit your own AI spend &rarr;
         </a>
       </div>
     </main>

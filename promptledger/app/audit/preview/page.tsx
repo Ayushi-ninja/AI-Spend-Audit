@@ -134,13 +134,12 @@ export default function PreviewPage() {
             from companies that overforecast. Your spend qualifies for a consultation.
           </p>
           
-            href="https://credex.rocks"
+           <a href="https://credex.rocks"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-white text-black px-5 py-2.5 rounded-lg 
-                       font-medium text-sm hover:bg-gray-100 transition"
+            className="inline-block bg-white text-black px-5 py-2.5 rounded-lg font-medium text-sm hover:bg-gray-100 transition"
           >
-            Book a Credex Consultation →
+            Book a Credex Consultation &rarr;
           </a>
         </div>
       )}
