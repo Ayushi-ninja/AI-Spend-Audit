@@ -1,8 +1,10 @@
 import { AuditInput, AuditResult, ToolAuditResult, RecommendationType } from '@/types/audit'
 import { PRICING } from '@/lib/pricing'
-import { v4 as uuidv4 } from 'uuid'
 
 // ─── Individual tool rules ──────────────────────────────────────────
+function generateId(): string {
+    return Math.random().toString(36).substring(2, 9) + Date.now().toString(36)
+  }
 
 function auditCursor(tool: AuditInput['tools'][0], teamSize: number, useCase: string): ToolAuditResult {
   const base: Partial<ToolAuditResult> = {
@@ -12,6 +14,8 @@ function auditCursor(tool: AuditInput['tools'][0], teamSize: number, useCase: st
     currentSpend: tool.monthlySpend,
     seats: tool.seats,
   }
+
+  
 
   // Business for solo or 2-person team is overkill
   if (tool.plan === 'Business' && tool.seats <= 2) {
@@ -321,7 +325,7 @@ export function runAudit(input: AuditInput): AuditResult {
   const totalMonthlySavings = results.reduce((sum, r) => sum + r.monthlySavings, 0)
 
   return {
-    auditId: uuidv4(),
+   auditId: generateId(),
     createdAt: new Date().toISOString(),
     input,
     tools: results,

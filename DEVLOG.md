@@ -64,3 +64,57 @@ Build the audit engine as a pure TypeScript function. Write defensible rules for
 all 8 tools covering wrong-plan-for-team-size, cheaper-same-vendor-plan, and
 cheaper-alternative recommendations. Write all 5+ audit engine tests. Begin the
 results page layout.
+
+## Day 3 — 2026-05-08
+
+**Hours worked:** 6
+
+**What I did:**
+Extended types/audit.ts with ToolAuditResult and AuditResult output types.
+Built pricing constants in lib/pricing.ts sourced from verified vendor pages.
+Implemented the full audit engine as a pure TypeScript function with individual
+rule functions for all 8 tools. Rules cover three scenarios per tool: wrong plan
+for team size, cheaper same-vendor alternative, and retail-vs-credits eligibility.
+Wrote 6 Jest tests covering the main audit paths. Set up Jest with ts-jest and
+confirmed all tests pass. Added a working results preview page that reads from
+localStorage and renders the audit output.
+
+**What I learned:**
+Writing defensible audit logic is harder than it sounds. The first draft just said
+"switch to X" without explaining why — had to rewrite every reason string to
+include actual numbers and specific capability comparisons so a finance person
+would agree. Also learned that API-direct users need a different evaluation model
+since they don't pay per seat.
+
+**Blockers / what I'm stuck on:**
+The uuid package caused a module resolution issue with Jest — fixed by adding
+moduleNameMapper in jest.config.js. Still need to decide how to handle the
+case where a user inputs a monthly spend that doesn't match the expected
+per-seat pricing — currently trusting the user's input as the source of truth.
+
+**Plan for tomorrow:**
+Build the full results page UI — hero savings numbers, per-tool breakdown cards,
+Credex CTA for high-savings cases, honest messaging for already-optimal cases.
+Integrate the Anthropic API for the personalized summary paragraph. Begin
+Supabase schema and save audit results to the database.
+
+## Day 4 — 2026-05-09
+
+**Hours worked:** 2
+
+**What I did:**
+Set up Supabase project and created the audits table with public_url_id for
+shareable URLs.
+
+**What I learned:**
+Also learned that Supabase
+RLS needs to be configured carefully — disabled it for now and will revisit
+before final submission.
+
+**Blockers / what I'm stuck on:**
+Need to implement the Supabase insert logic for saving audit results.
+Also need to figure out how to handle the RLS configuration properly.
+
+**Plan for tomorrow:**
+Implement the Supabase insert logic for saving audit results.
+Figure out how to handle the RLS configuration properly.
