@@ -83,7 +83,7 @@ components are copied into the repo — no runtime dependency.
    and stream the summary in when ready. This cuts perceived latency
    from ~3s to ~300ms.
 
-3. **Supabase:** Add row-level security policies. Currently disabled
+3. **Supabase:** Add row-level security policies. 
    for development speed — a production deploy needs RLS to prevent
    users from reading each other's audit data via the anon key.
 

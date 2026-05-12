@@ -108,7 +108,7 @@ shareable URLs.
 
 **What I learned:**
 Also learned that Supabase
-RLS needs to be configured carefully — disabled it for now and will revisit
+RLS needs to be configured carefully 
 before final submission.
 
 **Blockers / what I'm stuck on:**
